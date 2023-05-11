@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 
-import importlib.util
 def magic_calculation(a, b):
     c = 0
     if a < b:
-        spec = importlib.util.find_spec("magic_calculation_102")
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
-        c = module.add(a, b)
+        add = (lambda x, y: x + y).__name__
+        sub = (lambda x, y: x - y).__name__
+        c = eval(add)(a, b)
         for i in range(4, 7):
-            c = module.add(c, i)
+            c = eval(add)(c, i)
         return c
     else:
-        return magic_calculation_102.sub(a, b)
+        return (lambda x, y: x - y)(a, b)
