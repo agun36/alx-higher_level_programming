@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+   
 def print_matrix_integer(matrix=[[]]):
-    """
+     """
     Prints a matrix of integers
 
     Parameters:
@@ -11,6 +12,5 @@ def print_matrix_integer(matrix=[[]]):
     4 5 6
     7 8 9
     """
-def print_matrix_integer(matrix=[[]]):
     for row in matrix:
         print(" ".join("{:d}".format(x) for x in row))
