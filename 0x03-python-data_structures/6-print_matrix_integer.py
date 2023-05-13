@@ -11,8 +11,6 @@ def print_matrix_integer(matrix=[[]]):
     4 5 6
     7 8 9
     """
-
+def print_matrix_integer(matrix=[[]]):
     for row in matrix:
-        for value in row:
-            print("{:d} ".format(value), end="")
-        print()
+        print(" ".join(str(x) for x in row))
