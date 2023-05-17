@@ -2,7 +2,6 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    
     best_score = 0
     best_key = None
     for key, value in a_dictionary.items():
