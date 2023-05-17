@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
-    for i in range(len(my_list)):
-        if my_list[i] == search:
-            my_list[i] = replace
-    return my_list
+    # Create a new list to store the replaced elements
+    new_list = []
+
+    # Iterate over each element in the original list
+    for key in my_list:
+        # Check if the element matches the search element
+        if key == search:
+            # If it matches, replace it with the new element
+            new_list.append(replace)
+        else:
+            # If it doesn't match, keep the element as it is
+            new_list.append(key)
+
+    return new_list
