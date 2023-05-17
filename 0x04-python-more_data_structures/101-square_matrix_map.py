@@ -4,5 +4,6 @@ def square_matrix_map(matrix=[]):
     for row in matrix:
         new_row = []
         for item in row:
-            new_row.appen(new_row)
+            new_row.append(item * item)
+        new_matrix.append(new_row)
     return new_matrix
