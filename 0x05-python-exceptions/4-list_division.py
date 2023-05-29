@@ -12,7 +12,7 @@ def list_division(my_list_1, my_list_2, list_length):
             re = 0
         except ZeroDivisionError:
             print("division by 0")
-            re = 0       
+            re = 0
         finally:
             empty_count.append(re)
     return empty_count
