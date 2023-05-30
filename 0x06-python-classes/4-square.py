@@ -1,42 +1,38 @@
-class Square:
+#!/usr/bin/python3
+"""define a class of square """
+
+
+class Square():
+    """initializing private using __size
+    Attributes:
+       __size (int): size of the quare
+    """
     def __init__(self, size=0):
-        """Initializes a Square instance.
+        """assigning values to private attribute
         Args:
-            size (int): The size of the square (default is 0).
-        Returns:
-            None
+             size (int): size of a quare
+        Returns: None
         """
-        self.size = size
-
-    def area(self):
-        """Calculates the area of the square.
-        Returns:
-            int: The area of the square.
-        """
-        return self.__size ** 2
-
-    @property
-    def size(self):
-        """Getter method for the __size attribute.
-        Returns:
-            The size of the square.
-        """
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """Setter method for the __size attribute.
-        Args:
-            value (int): The size value to be set.
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is less than 0.
-        Returns:
-            None
-        """
-        if not isinstance(value, int):
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.__size = size
+
+    def area(self):
+        """Find area of square
+        Returns: return the are of square
+        """
+        return self.__size ** 2
+    
+     def my_print(self):
+        """Prints the square using '#' character.
+           
+           If size is 0, prints an empty line.
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
