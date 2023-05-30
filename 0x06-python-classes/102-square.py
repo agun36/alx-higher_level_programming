@@ -71,7 +71,7 @@ class Square():
         return self.area() != other.area()
 
     def __lt__(self, other):
-        """Check if the square is smaller than the other square based on their areas.
+        """Check if d square is smaller than d other square based on their are
 
         Args:
             other (Square): The other square to compare.
@@ -82,7 +82,7 @@ class Square():
         return self.area() < other.area()
 
     def __le__(self, other):
-        """Check if the square is smaller or equal to the other square based on their areas.
+        """Check if d squ is smaller or == to d other square based on their ar
 
         Args:
             other (Square): The other square to compare.
@@ -93,7 +93,7 @@ class Square():
         return self.area() <= other.area()
 
     def __gt__(self, other):
-        """Check if the square is greater than the other square based on their areas.
+        """Check if the square is > than d other square based on their areas.
 
         Args:
             other (Square): The other square to compare.
@@ -104,7 +104,7 @@ class Square():
         return self.area() > other.area()
 
     def __ge__(self, other):
-        """Check if the square is greater or equal to the other square based on their areas.
+        """Check if the square is greater or equal to the other square based
 
         Args:
             other (Square): The other square to compare.
