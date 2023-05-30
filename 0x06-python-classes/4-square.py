@@ -6,14 +6,15 @@ class Square:
             size (int): The size of the square (default is 0).
         """
         self.size = size
-     def area(self):
+
+    def area(self):
         """
         Calculates the area of the square.
         Returns:
             int: The area of the square.
         """
         return self.__size ** 2
-    
+
     @property
     def size(self):
         """
