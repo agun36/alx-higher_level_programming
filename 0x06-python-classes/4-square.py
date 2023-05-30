@@ -7,7 +7,7 @@ class Square:
             size (int): The size of the square (default is 0).
         """
         self.size = size
-    
+
     @property
     def size(self):
         """
@@ -17,7 +17,7 @@ class Square:
             int: The size of the square.
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
@@ -25,7 +25,6 @@ class Square:
 
         Args:
             value (int): The size value to be set.
-
         Raises:
             TypeError: If the value is not an integer.
             ValueError: If the value is less than 0.
@@ -36,7 +35,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-    
+
     def area(self):
         """
         Calculates the area of the square.
@@ -44,5 +43,5 @@ class Square:
         Returns:
             int: The area of the square.
         """
-        return self.__size ** 2
 
+        return self.__size ** 2
