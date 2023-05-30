@@ -48,8 +48,8 @@ class Square():
         Returns:The are of square
         """
         return self.__size ** 2
-    
-     def my_print(self):
+
+    def my_print(self):
         """Print the square with '#' characters."""
         if self.__size == 0:
             print()
