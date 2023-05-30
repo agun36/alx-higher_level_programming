@@ -20,7 +20,7 @@ class Square():
         else:
             self.size = size
             
-     @size.setter
+    @size.setter
     def size(self, value):
         """Set the size of the square.
 
