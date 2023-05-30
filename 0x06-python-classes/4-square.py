@@ -19,18 +19,19 @@ class Square():
             raise ValueError("size must be >= 0")
         else:
             self.size = size
+
     @property
     def size(self):
-        """Retrieve the size of the square."""
-        return self.__size        
-    
+        """Retrieve the si
+        ze of the square.
+        """
+	return self.__size
+
     @size.setter
     def size(self, value):
         """Set the size of the square.
-
         Args:
             value (int): The new size of the square.
-
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
@@ -40,8 +41,8 @@ class Square():
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
-            
+             self.__size = value
+
     def area(self):
         """Find area of square
         Returns:The are of square
