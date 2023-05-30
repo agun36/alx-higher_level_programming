@@ -48,6 +48,7 @@ class Square():
         Returns:The are of square
         """
         return (self.__size) ** 2
+    
     def __eq__(self, other):
         """Check if two squares are equal based on their areas.
 
