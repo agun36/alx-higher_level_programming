@@ -4,9 +4,13 @@
 
 class Square():
     """initializing private using __size
-    Args:
-	__size (int): size of the quare
-    Return: None
+    Attributes:
+       __size (int): size of the quare
     """
     def __init__(self, size):
+        """assigning values to private attribute
+        Args:
+             size (int): size of a quare
+        Returns: None
+        """
         self.__size = size
