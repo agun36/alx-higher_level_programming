@@ -5,7 +5,7 @@
 class Square():
     """initializing private using __size
     Attributes:
-       __size (int): size of the quare
+        __size (int): __size of the quare
     """
     def __init__(self, size=0):
         """assigning values to private attribute
@@ -18,7 +18,7 @@ class Square():
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.size = size
 
     def area(self):
         """Find area of square
