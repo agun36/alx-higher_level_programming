@@ -4,7 +4,7 @@ class Square:
         Args:
             size (int): The size of the square (default is 0).
         Returns:
-            None        
+            None
         """
         self.size = size
 
