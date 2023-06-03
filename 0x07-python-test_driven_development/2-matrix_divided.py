@@ -41,9 +41,7 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     # Perform division and round to 2 decimal places
-    new_matrix = [[round(num / div, 2) for num in row] for row in matrix]
-
-    return new_matrix
+    return [[round(element / div, 2) for num in row] for row in matrix]
 
 if __name__ == "__main__":
     import doctest
