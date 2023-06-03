@@ -9,52 +9,37 @@ First import ``say_my_name``
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 ***********************************************************************
-#testing two strings
 >>> say_my_name("AKindele", "Agun")
 My name is Akindele Agun
 
-#testing only first_name
 >>> say_my_name("Akindele")
 My name is Akindele 
 
-
-#testing None as first_name
 >>> say_my_name(None)
 Traceback (most recent call last):
 ....
 TypeError: first_name must be a string
 
-
-#testing None as last_name
 >>> say_my_name("Agun", None)
 Traceback (most recent call last):
 ....
 TypeError: last_name must be a string
 
-
-#testing int as first_name
 >>> say_my_name(12)
 Traceback (most recent call last):
 ....
 TypeError: first_name must be a string
 
-
-#testing int as last_name
 >>> say_my_name("Agun", 34)
 Traceback (most recent call last):
 ....
 TypeError: last_name must be a string
 
-
-
-#passing no argument
 >>> say_my_name()
 Traceback (most recent call last):
 ...
 TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
-
-#passing list as argument
 >>> say_my_name(["Wilfred", "Toroti"])
 Traceback (most recent call last):
 ...
