@@ -6,6 +6,7 @@ def add_integer(a, b=98):
         a (int or float): The first integer.
         b (int or float): The second integer. Defaults to 98.
 
+
     Returns:
         int: The sum of a and b.
 
@@ -19,7 +20,4 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer or float")
 
-    a = int(a)
-    b = int(b)
-
-    return a + b
+    return int(a) + int(b)
