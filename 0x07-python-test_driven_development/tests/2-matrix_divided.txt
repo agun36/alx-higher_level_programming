@@ -1,0 +1,35 @@
+import unittest
+from matrix_divided import matrix_divided
+
+class TestMatrixDivided(unittest.TestCase):
+    def test_matrix_divided(self):
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6]
+        ]
+
+        result = matrix_divided(matrix, 3)
+        expected_result = [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+        self.assertEqual(result, expected_result)
+
+    def test_matrix_divided_with_zero_division(self):
+        matrix = [
+            [1, 2],
+            [3, 4]
+        ]
+
+        with self.assertRaises(ZeroDivisionError):
+            matrix_divided(matrix, 0)
+
+    def test_matrix_divided_with_invalid_matrix(self):
+        matrix = [
+            [1, 2],
+            [3]
+        ]        
+
+        with self.assertRaises(TypeError):
+            matrix_divided(matrix, 2)
+
+if __name__ == '__main__':
+    unittest.main()
