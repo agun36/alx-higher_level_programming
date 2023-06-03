@@ -1,0 +1,23 @@
+import unittest
+
+# Import the matrix_mul function
+from matrix_mul import matrix_mul
+
+class MatrixMulTestCase(unittest.TestCase):
+    def test_matrix_multiplication(self):
+        # Test case 1
+        m_a = [[1, 2], [3, 4]]
+        m_b = [[1, 2], [3, 4]]
+        expected_result = [[7, 10], [15, 22]]
+        self.assertEqual(matrix_mul(m_a, m_b), expected_result)
+
+        # Test case 2
+        m_a = [[1, 2]]
+        m_b = [[3, 4], [5, 6]]
+        expected_result = [[13, 16]]
+        self.assertEqual(matrix_mul(m_a, m_b), expected_result)
+
+        # Add more test cases here
+
+if __name__ == '__main__':
+    unittest.main()
