@@ -17,7 +17,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-5.2, -6.7, -9.3]), -5.2)
         self.assertEqual(max_integer("123453276921"), "9")
         self.assertEqual(max_integer('abc'), 'c')
-        self.assertIsNone(max_integer([]), None)
+        self.assertIsNone(max_integer([]))
         self.assertIsNone(max_integer([None]), None)
         self.assertEqual(max_integer([[5, 6, 7], [5, 6, 7]]), [5, 6, 7])
         with self.assertRaises(TypeError):
