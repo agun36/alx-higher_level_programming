@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 >>> add_integer = __import__('0-add_integer').add_integer
+
+"""
 >>> add_integer(1, 2)
 3
 >>> add_integer(100, -2)
@@ -18,6 +20,7 @@ b must be an integer
 ... except Exception as e:
 ...     print(e)
 a must be an integer
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+"""
+
+import doctest
+doctest.testmod()
