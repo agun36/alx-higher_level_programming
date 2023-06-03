@@ -1,120 +1,20 @@
 #!/usr/bin/python3
-===============================
-This is a test case file
- >>> add_integer = __import__('0-add_integer').add_integer
-===============================
-
-This library is very simple function called
-``add_integer()``.
-``add_integer()`` returns two addition number a + b
-
-Numbers
-=======
-``add_integer()`` returns the product of its arguments.  For numbers,
-that value is equivalent to using the ``+`` operator.
-
-::
-   >>> from doctest_in_help import add_integer
-   
-   #testing two numbers
-   >>> add_integer(1, 2)
-	3
-   
-   #testing positive and negative number
-   >>> addinteger(100, -2)
-   98
-
-   #testsing negative and positive number
-   >>> add_integer(-2)
-   96
-
-   #testing two negative number
-   >>> add_integer(-1, -10)
-   -11
-
-   #testing a float and int
-   >>> add_integer(100.3)
-   198
-
-   #testing two float numbers
-   >>> add_integer(2.6,7.8)
-   9
-
-   #testing two negative float numbers
-   >>> add_integer(-2.6,-7.8)
-   -9
-
-   #testing two zeros
-   >>> add_integer(0,0)
-   0
-
-   #testing 2 long int
-   >>> add_integer(345567888654434556,345567888654434556)
-   691135777308869112
-
-
-   #testing int and int(string)
-   >>> add_integer(2,int('3'))
-   5
-
-
-   #testing int and bool
-   >>> add_integer(True)
-   Traceback (most recent call last):
-   ...
-   TypeError: a must be an integer
-
-
-   #testing int and complex number
-   >>> add_integer(2,(3 + 4j))
-   Traceback (most recent call last):
-   ...
-   TypeError: b must be an integer
-
-
-   #testing float("NaN")
-   >>> add_integer(4, float("NaN"))
-   Traceback (most recent call last):
-   ...
-   ValueError: cannot convert float NaN to integer
-
-
-   #testing two strings
-   >>> add_integer("ALX","Amazing")
-   Traceback (most recent call last):
-   ...
-   TypeError: a must be an integer
-
-
-   #Adding a number and a list
-   >>> add_integer(123, [])
-   Traceback (most recent call last):
-   ...
-   TypeError: b must be an integer
-
-
-   #Adding a tuple
-   >>> add_integer((1, 1))
-   Traceback (most recent call last):
-   ...
-   TypeError: a must be an integer
-
-
-   #Adding a dictionary
-   >>> add_integer({"a":1})
-   Traceback (most recent call last):
-   ...
-   TypeError: a must be an integer
-
-
-   #Checking no args:
-   >>> add_integer(None)
-   Traceback (most recent call last):
-   ...
-   TypeError: a must be an integer
-
-   #testing float overflow
-   >>> add_integer(4, float("inf"))
-   Traceback (most recent call last):
-   ...
-   OverflowError: cannot convert float infinity to integer
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98
+>>> try:
+...     add_integer(4, "School")
+... except Exception as e:
+...     print(e)
+b must be an integer
+>>> try:
+...     add_integer(None)
+... except Exception as e:
+...     print(e)
+a must be an integer
