@@ -3,6 +3,9 @@ class Rectangle(BaseGeometry):
     """defining a rectangle using Base."""
 
 
+    BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
     def __init__(self, width, height):
         """creating  attributes with super.
 
