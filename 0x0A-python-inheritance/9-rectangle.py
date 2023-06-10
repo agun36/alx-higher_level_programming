@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle that inherits from BaseGeometry."""
+"""9-rectangle.py module"""
+
+
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """initialsing a base object."""
+    """Class Rectangle that inherits from BaseGeometry"""
 
     def __init__(self, width, height):
-        """Intialize a new Rectangle.
-
-        Args:
-            width (int): The width of the new Rectangle.
-            height (int): The height of the new Rectangle.
         """
-        super().integer_validator("width", width)
+        private attributes width and height,
+        and validating if they are ints.
+        """
+        self.integer_validator("width", width)
         self.__width = width
-        super().integer_validator("height", height)
+        self.integer_validator("height", height)
         self.__height = height
 
     def area(self):
-        """Return the area of the rectangle."""
-        return self.__width * self.__height
+        """area: returns the area of a rectangle"""
+        return (self.__width * self.__height)
+
+    def __str__(self):
+        """prints Rectangle info with format"""
+        return f"[Rectangle] {self.__width}/{self.__height}"
