@@ -1,33 +1,40 @@
 #!/usr/bin/python3
-'Log Parsing'
+"""
+reads stdin line by line and computes metrics
+"""
 import sys
 
-items_list = [200, 301, 400, 401, 403, 404, 405, 500]
+file_size = 0
+status_tally = {"200": 0, "301": 0, "400": 0, "401": 0,
+                "403": 0, "404": 0, "405": 0, "500": 0}
+i = 0
 try:
-    total = 0
-    final = []
-    for index, line in enumerate(sys.stdin, 1):
-        if line:
-            line_split = line.split()
-            if len(line_split) > 2:
-                if line_split[-1].isnumeric() and line_split[-2].isnumeric():
-                    size = line_split[-1]
-                    status = line_split[-2]
-                    total += int(size)
-            if len(status) > 0 and int(status) in status_list:
-                final.append(int(status))
-        if index % 10 == 0:
-            print('File size: {}'.format(total))
-            for i in items_list:
-                if i in final:
-                    status_count = final.count(i)
-                    print("{}: {}".format(i, status_count))
-except Exception:
-    pass
+    for line in sys.stdin:
+        tokens = line.split()
+        if len(tokens) >= 2:
+            a = i
+            if tokens[-2] in status_tally:
+                status_tally[tokens[-2]] += 1
+                i += 1
+            try:
+                file_size += int(tokens[-1])
+                if a == i:
+                    i += 1
+            except FileNotFoundError:
+                if a == i:
+                    continue
+        if i % 10 == 0:
+            print("File size: {:d}".format(file_size))
+            for key, value in sorted(status_tally.items()):
+                if value:
+                    print("{:s}: {:d}".format(key, value))
+    print("File size: {:d}".format(file_size))
+    for key, value in sorted(status_tally.items()):
+        if value:
+            print("{:s}: {:d}".format(key, value))
 
-finally:
-    print('File size: {}'.format(total))
-    for i in items_list:
-        if i in final:
-            status_count = final.count(i)
-            print("{}: {}".format(i, status_count))
+except KeyboardInterrupt:
+    print("File size: {:d}".format(file_size))
+    for key, value in sorted(status_tally.items()):
+        if value:
+            print("{:s}: {:d}".format(key, value))
