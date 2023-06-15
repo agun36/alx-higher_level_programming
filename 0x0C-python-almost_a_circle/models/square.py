@@ -14,6 +14,10 @@ class Square(Rectangle):
             id (int): The id of the square (optional).
         """
         super().__init__(size, size, x, y, id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y        
 
     @property
     def size(self):
@@ -25,12 +29,6 @@ class Square(Rectangle):
         """Setter method for size."""
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """Return the string representation of the square."""
-        return "[Square] ({}) {}/{} - {}".format(self.id,
-                                                 self.x,
-                                                 self.y, self.width)
 
     def update(self, *args, **kwargs):
         """Assign arguments to the attributes."""
@@ -52,3 +50,19 @@ class Square(Rectangle):
         else:
              for key, value in kwargs.items():
                  setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+
+      def __str__(self):
+        """Return the string representation of the square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x,
+                                                 self.y, self.width)
