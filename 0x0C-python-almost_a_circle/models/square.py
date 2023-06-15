@@ -15,8 +15,7 @@ class Square(Rectangle):
             id (int): The id of the square (optional).
         """
         super().__init__(size, size, x, y, id)
-        self.width = width
-        self.height = height
+        self.size = size
         self.x = x
         self.y = y        
 
@@ -56,7 +55,7 @@ class Square(Rectangle):
         """Return the dictionary representation of a Rectangle."""
         return {
             'id': self.id,
-            'width': self.width,
+            'size': self.width,
             'height': self.height,
             'x': self.x,
             'y': self.y
