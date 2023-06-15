@@ -93,7 +93,7 @@ class Rectangle(Base):
                                                        self.__width,
                                                        self.__height)
 
-     def display(self):
+    def display(self):
         """Display the rectangle using '#' character."""
         for _ in range(self.__y):
             print()
