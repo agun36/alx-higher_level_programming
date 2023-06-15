@@ -100,7 +100,7 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(' ' * self.__x + '#' * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assign arguments to the attributes."""
         num_args = len(args)
         if num_args >= 1:
