@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Represent a square."""
 
@@ -14,8 +15,6 @@ class Square(Rectangle):
             id (int): The id of the square (optional).
         """
         super().__init__(size, size, x, y, id)
-        self.width = width
-        self.height = height
         self.size = size
         self.x = x
         self.y = y        
