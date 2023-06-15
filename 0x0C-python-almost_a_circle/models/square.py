@@ -16,6 +16,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.width = width
         self.height = height
+        self.size = size
         self.x = x
         self.y = y        
 
