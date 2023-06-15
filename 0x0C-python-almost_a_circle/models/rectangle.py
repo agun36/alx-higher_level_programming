@@ -105,11 +105,7 @@ class Rectangle(Base):
         num_args = len(args)
         if num_args >= 1:
             self.id = args[0]
-        if num_args >= 2:
-            self.width = args[1]
-        if num_args >= 3:
-            self.height = args[2]
-        if num_args >= 4:
-            self.x = args[3]
-        if num_args >= 5:
-            self.y = args[4]
+
+        if num_args == 0 or num_args >= 1:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
