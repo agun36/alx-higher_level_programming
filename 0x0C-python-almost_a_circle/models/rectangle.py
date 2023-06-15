@@ -108,4 +108,4 @@ class Rectangle(Base):
                 setattr(self, attributes[i], arg)
         else:
             for key, value in kwargs.items():
-                setattr(self, key, value
+                setattr(self, key, value)
