@@ -41,3 +41,14 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def update(self, *args, **kwargs):
+    """Update the attributes of the square."""
+    if args:
+        attributes = ["id", "size", "x", "y"]
+        for i, arg in enumerate(args):
+            if i < len(attributes):
+                setattr(self, attributes[i], arg)
+    else:
+        for key, value in kwargs.items():
+            setattr(self, key, value)
