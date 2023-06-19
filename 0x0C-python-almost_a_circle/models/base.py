@@ -53,7 +53,7 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the list of the JSON string representation json_string.
+        """Returns list of the JSON string representation to json_string.
         Args:
             json_string (str): string representing a list of dictionaries.
         """
@@ -90,18 +90,18 @@ class Base():
         Args:
             list_objs (list): a list of objects.
         """
-        fields = []
+        loaded = []
         with open(cls.__name__ + ".csv", 'w') as f:
             if list_objs is None or len(list_objs) <= 0:
                 f.write('[]')
             else:
                 if cls.__name__ is "Rectangle":
-                    fields = ['id', 'width', 'height', 'x', 'y']
+                    loaded = ['id', 'width', 'height', 'x', 'y']
                 elif cls.__name__ is "Square":
-                    fields = ['id', 'size', 'x', 'y']
-                writer = csv.DictWriter(f, fieldnames=fields)
-                for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+                    loaded = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(f, fieldnames=loaded)
+                for list_obj in list_objs:
+                    writer.writerow(list_obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
@@ -109,17 +109,17 @@ class Base():
         Deserializes the CSV string representation
         of list_objs from a file.
         """
-        fields = []
+        loaded = []
         try:
             with open(cls.__name__ + ".csv", 'r') as f:
                 if cls.__name__ is "Rectangle":
-                    fields = ['id', 'width', 'height', 'x', 'y']
+                    loaded = ['id', 'width', 'height', 'x', 'y']
                 elif cls.__name__ is "Square":
-                    fields = ['id', 'size', 'x', 'y']
-                reader = csv.DictReader(f, fieldnames=fields)
-                dcts = [dict([k, int(v)] for k, v in l.items())
+                    loaded = ['id', 'size', 'x', 'y']
+                reader = csv.DictReader(f, fieldnames=loaded)
+                dicts = [dict([k, int(v)] for k, v in l.items())
                         for l in reader]
-                return [cls.create(**dct) for dct in dcts]
+                return [cls.create(**dct) for dct in dicts]
 
         except IOError:
             return []
@@ -130,32 +130,32 @@ class Base():
             list_rectangles (list): a list of rectangle instances.
             list_squares (list): a list of square instances.
         """
-        t = turtle.Turtle()
-        t.screen.bgcolor('#000000')
-        t.shape('turtle')
-        t.color('#ffffff')
-        t.penup()
-        t.goto(-200, 200)
+        turt = turtle.Turtle()
+        turt.screen.bgcolor('#000000')
+        turt.shape('turtle')
+        turt.color('#ffffff')
+        turt.penup()
+        turt.goto(-200, 200)
         for rect in list_rectangles:
-            t.goto(t.xcor() + (rect.width + 20), t.ycor() - (rect.height + 20))
-            t.up()
-            t.down()
+            turt.goto(turt.xcor() + (rect.width + 20), turt.ycor() - (rect.height + 20))
+            turt.up()
+            turt.down()
             for i in range(2):
-                t.forward(rect.width)
-                t.left(90)
-                t.forward(rect.height)
-                t.left(90)
-            t.penup()
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.penup()
 
-        t.goto(-200, -20)
-        for squ in list_squares:
-            t.goto(t.xcor() + (squ.width + 20), t.ycor() - (squ.height + 20))
-            t.up()
-            t.down()
+        turt.goto(-200, -20)
+        for squares in list_squares:
+            turt.goto(t.xcor() + (squares.width + 20), turt.ycor() - (squares.height + 20))
+            turt.up()
+            turt.down()
             for i in range(2):
-                t.forward(squ.width)
-                t.left(90)
-                t.forward(squ.height)
-                t.left(90)
-            t.penup()
-        t.Screen().exitonclick()
+                turt.forward(squares.width)
+                turt.left(90)
+                turt.forward(squares.height)
+                turt.left(90)
+            turt.penup()
+        turt.Screen().exitonclick()
