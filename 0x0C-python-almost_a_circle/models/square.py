@@ -9,15 +9,12 @@ class Square(Rectangle):
         """
         Initialize a new instance of the Square class.
         Args:
-            size (int): The size of the square (width and height).
+            size (int): The size of the square.
             x (int): The x-coordinate of the square (default: 0).
             y (int): The y-coordinate of the square (default: 0).
             id (int): The id of the square (optional).
         """
-        super().__init__(size, size, x, y, id)
-        self.size = size
-        self.x = x
-        self.y = y        
+        super().__init__(size, size, x, y, id)  # Call the constructor of the Rectangle class
 
     @property
     def size(self):
@@ -30,25 +27,15 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def update(self, *args, **kwargs):
-        """Assign arguments to the attributes."""
-        if args:
-            attributes = ["id", "size", "x", "y"]
-            for i, arg in enumerate(args):
-                setattr(self, attributes[i], arg)
-        elif kwargs:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+    def __str__(self):
+        """Return the string representation of the square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
 
     def to_dictionary(self):
-        """Return the dictionary representation of a Rectangle."""
+        """Return the dictionary representation of the square."""
         return {
             'id': self.id,
             'size': self.width,
             'x': self.x,
             'y': self.y
         }
-
-    def __str__(self):
-        """Return the string representation of the square."""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
