@@ -107,16 +107,16 @@ class Rectangle(Base):
             args (list): attributes to be modified [id, width, height, x, y].
             kwargs (dict): attributes to be modified.
         """
-        dct = {}
+        dicts = {}
         if args is not None and len(args) > 0:
             keys = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args) if len(args) <= 5 else 5):
                 dct[keys[i]] = args[i]
         else:
-            dct = kwargs
+            dicts = kwargs
 
-        if len(dct) > 0:
-            for key, value in dct.items():
+        if len(dicts) > 0:
+            for key, value in dicts.items():
                 if key == 'id' and value is None:
                     self.__init__(self.width, self.height, self.x, self.y)
                 else:
