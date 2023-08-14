@@ -1,6 +1,6 @@
 #!/usr/bin/node
-const first = parseInt(process.argv[2]);
-const second = parseInt(process.argv[3]);
+const first = Number(process.argv[2]);
+const second = Number(process.argv[3]);
 function add (a, b) {
   if (isNaN(a) || isNaN(b)) {
     return NaN;
