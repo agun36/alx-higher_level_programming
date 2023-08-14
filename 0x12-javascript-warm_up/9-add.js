@@ -1,14 +1,8 @@
 #!/usr/bin/node
-
+const arg1 = Number(process.argv[2]);
+const arg2 = Number(process.argv[3]);
 function add(a, b) {
-  const arg1 = Number(a);
-  const arg2 = Number(b);
-
-  if (!isNaN(arg1) && !isNaN(arg2)) {
-    return arg1 + arg2;
-  } else {
-    return 'NaN';
-  }
+  const output = arg1 + arg2;
+  console.log(output);
 }
-
-console.log(add(process.argv[2], process.argv[3]));
+add(arg1, arg2);
