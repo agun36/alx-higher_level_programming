@@ -2,10 +2,11 @@
 const myObject = {
   type: 'object',
   value: 12
-  incr() {
+};  
+incr() {
   return myObject.value++;
 };
-};
+
 console.log(myObject);
 
 
