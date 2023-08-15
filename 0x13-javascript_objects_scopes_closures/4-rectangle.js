@@ -1,7 +1,7 @@
 #!/usr/bin/node
 module.exports = class Rectangle {
   constructor (w, h) {
-    if (w <= 0 || isNaN(w) || h <= 0 || isNaN(h)) {
+    if ((w <= 0 || isNaN(w)) || (h <= 0 || isNaN(h))) {
       return {};
     }
 
@@ -9,7 +9,7 @@ module.exports = class Rectangle {
     this.height = h;
   }
 
-  print() {
+  print () {
     let num = 0;
     while (num < this.height) {
       console.log('X'.repeat(this.width));
@@ -17,11 +17,11 @@ module.exports = class Rectangle {
     }
   }
 
-  rotate() {
+  rotate () {
     [this.width, this.height] = [this.height, this.width];
   }
 
-  double() {
+  double () {
     this.width *= 2;
     this.height *= 2;
   }

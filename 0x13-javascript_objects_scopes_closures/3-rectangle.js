@@ -8,12 +8,13 @@ module.exports = class Rectangle {
     this.width = w;
     this.height = h;
   }
+
   // methhod that print rectangle with while loop
-  print() {
+  print () {
     let num = 0;
     while (num < this.height) {
       console.log('X'.repeat(this.width));
       num++;
     }
-  } 
+  }
 };
