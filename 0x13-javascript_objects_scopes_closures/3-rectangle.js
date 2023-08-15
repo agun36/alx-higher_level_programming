@@ -4,10 +4,10 @@ module.exports = class Rectangle {
   constructor (w, h) {
     if ((w <= 0 || isNaN(w)) || (h <= 0 || isNaN(h))) {
       return {};
-    };
+    }
     this.width = w;
     this.height = h;
-  };
+  }
 
   // methhod that print rectangle with while loop
   print () {
@@ -15,6 +15,6 @@ module.exports = class Rectangle {
     while (num < this.height) {
       console.log('X'.repeat(this.width));
       num++;
-    };
-  };
+    }
+  }
 };
