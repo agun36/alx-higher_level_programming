@@ -5,6 +5,6 @@ module.exports = {
     while (i < n;) {
       f();
       i++;
-    }
-  }
+    };
+  };
 };
