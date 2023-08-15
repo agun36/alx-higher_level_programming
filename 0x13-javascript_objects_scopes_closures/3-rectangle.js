@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+// create new instance with constructor
 module.exports = class Rectangle {
   constructor (w, h) {
     if (w <= 0 || isNaN(w) || h <= 0 || isNaN(h)) {
@@ -8,7 +8,7 @@ module.exports = class Rectangle {
     this.width = w;
     this.height = h;
   }
-
+  // methhod that print rectangle with while loop
   print() {
     let num = 0;
     while (num < this.height) {
