@@ -16,20 +16,11 @@ running on port 5000
 
 Usage: ./7-error_code.py <url>
 """
-
-
 import requests
-import sys
+from sys import argv
 
-
-def get_body(url):
-    response = requests.get(url)
-    if response.status_code >= 400:
-        print('Error code: {}'.format(response.status_code))
-    else:
-        print(response.content)
-
-
-if __name__ == "__main__":
-    url = sys.argv[1]
-    get_body(url)
+if __name__ == '__main__':
+    r = requests.get(argv[1])
+    status = r.status_code
+    print(r.text) if status < 400 else print(
+        "Error code: {}".format(r.status_code))
