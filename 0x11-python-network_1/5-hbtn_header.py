@@ -10,16 +10,10 @@ Usage: ./5-hbtn_header.py <url>
 """
 
 
-import requests
-import sys
+if __name__ == '__main__':
+    import requests
+    from sys import argv
 
-
-if __name__ == "__main__":
-    url = sys.argv[1]
-
-    response = requests.get(url)
-    
-    if 'X-Request-Id' in response.headers:
-        print(response.headers['X-Request-Id'])
-    else:
+    r = requests.get(argv[1])
+    print(r.headers.get('X-Request-Id'))
         print("Header 'X-Request-Id' not found in the response.")
