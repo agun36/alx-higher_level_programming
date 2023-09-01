@@ -13,21 +13,10 @@ Please test your script in the sandbox provided, using the web server running on
 
 Usage: ./6-post_email.py <url> <email>
 """
-
-
 import requests
-import sys
+from sys import argv
 
-
-def post_email(url, email):
-    response = requests.post(url, data={'email': email})
-    print(response.content)
-
-
-if __name__ == "__main__":
-    if len(sys.argv) == 3:
-        url = sys.argv[1]
-        email = sys.argv[2]
-        post_email(url, email)
-    else:
-        print('Usage: ./6-post_email.py <url> <email>')
+if __name__ == '__main__':
+    payload = {'email': argv[2]}
+    r = requests.post(argv[1], data=payload)
+    print(r.text)
