@@ -23,7 +23,6 @@ Usage: ./8-json_api.py <letter>
 import requests
 import sys
 
-
 def search_user(q):
     url = 'http://0.0.0.0:5000/search_user'
     data = {'q': q}
@@ -35,13 +34,12 @@ def search_user(q):
             try:
                 data = response.json()
                 print('[{}] {}'.format(data['id'], data['name']))
-            except JSONDecodeError:
+            except:
                 print('Not a valid JSON')
         else:
             print('No result')
     else:
         print('Error code: {}'.format(response.status_code))
-
 
 if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ''
