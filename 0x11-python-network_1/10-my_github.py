@@ -17,12 +17,16 @@ arguments passed to the script (number or type)
 """
 
 
-import requests
-from requests.auth import HTTPBasicAuth
+import requests as rq
 from sys import argv
 
-if __name__ == '__main__':
-    url = 'https://api.github.com/users/{}'.format(argv[1])
-    r = requests.get(url,
-                     auth=HTTPBasicAuth(argv[1], argv[2]))
-    print(r.json().get('id'))
+
+if __name__ == "__main__":
+    url = 'https://api.github.com/user'
+
+    try:
+        r = rq.get(url, auth=(argv[1], argv[2]))
+        print(r.json().get('id'))
+
+    except KeyError:
+        print('None')
