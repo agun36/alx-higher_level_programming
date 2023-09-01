@@ -23,9 +23,9 @@ def hbtn_status():
     body = response.read()
 
   print('Body response:')
-  print('\t- type: {!r}'.format(type(body)))
-  print('\t- content: {!r}'.format(repr(body)))
-  print('\t- utf8 content: {!r}'.format(body.decode('utf-8')))
+  print('\t- type: {}'.format(type(body)))
+  print('\t- content: {}'.format(repr(body)))
+  print('\t- utf8 content: {}'.format(body.decode('utf-8')))
 
 if __name__ == "__main__":
   hbtn_status()
